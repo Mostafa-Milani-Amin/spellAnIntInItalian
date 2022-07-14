@@ -1,0 +1,38 @@
+{
+  "name": "spell-integer",
+  "version": "1.0.0",
+  "description": "Converts a positive integer to its literal correspondent in Italian.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mostafa-Milani-Amin/spellAnIntInItalian.git"
+  },
+  "keywords": [
+    "spell",
+    "integer",
+    "italian",
+    "number",
+    "javascript",
+    "js",
+    "string",
+    "sentence",
+    "spellinteger",
+    "intalianlanguage",
+    "numero",
+    "intero",
+    "sillabare",
+    "frase",
+    "italiano",
+    "linguaitaliana",
+    "italiana"
+  ],
+  "author": "Mostafa Milani Amin",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Mostafa-Milani-Amin/spellAnIntInItalian/issues"
+  },
+  "homepage": "https://github.com/Mostafa-Milani-Amin/spellAnIntInItalian#readme"
+}
