@@ -136,4 +136,4 @@ const spellAnIntInItalian = int => {
     return result;
 };
 
-module.exports = { spellAnIntInItalian };
+export default spellAnIntInItalian;
