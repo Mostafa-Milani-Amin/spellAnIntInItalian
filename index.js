@@ -1,6 +1,7 @@
 const spellAnIntInItalian = int => {
+    let IDcent
     let oneHundredAndEighty;
-    mono = new Array(
+    let mono = new Array(
         "",
         "uno",
         "due",
@@ -12,7 +13,7 @@ const spellAnIntInItalian = int => {
         "otto",
         "nove"
     );
-    double = new Array(
+    let double = new Array(
         "dieci",
         "undici",
         "dodici",
@@ -24,7 +25,7 @@ const spellAnIntInItalian = int => {
         "dici" + mono[8],
         "dician" + mono[9]
     );
-    deca = new Array(
+    let deca = new Array(
         "",
         double[0],
         "venti",
@@ -36,8 +37,8 @@ const spellAnIntInItalian = int => {
         "ottanta",
         "novanta"
     );
-    hundred = new Array("cent", "cento");
-    mili = new Array();
+    let hundred = new Array("cent", "cento");
+    let mili = new Array();
     mili[0] = new Array(
         "",
         "mille",
@@ -47,21 +48,21 @@ const spellAnIntInItalian = int => {
         "biliardo"
     );
     mili[1] = new Array("", "mila", "milioni", "miliardi", "bilioni", "biliardi");
-    text = new Array();
-    digit = new Array();
-    result = "";
-    section = 0;
+    let text = new Array();
+    let digit = new Array();
+    let result = "";
+    let section = 0;
     oneHundredAndEighty = oneHundredAndEighty || false;
     if (isNaN(int)) {
         return "This is not an integer. Try again...";
     } else if (/\u002B/.test(int)) {
-        return spellAnIntInItalian(int.replace(/\u002B/, ''));
+        return this.spellinteger(int.replace(/\u002B/, ''));
     }
     int += "";
     while (int.substring(0, 1) == "0" && int.length != 1) {
         int = int.substring(1, int.length + 1);
     }
-    num = parseInt(int);
+    let num = parseInt(int);
     switch (int.length % 3) {
         case 1:
             int = "00" + int;
@@ -69,7 +70,7 @@ const spellAnIntInItalian = int => {
         case 2:
             int = "0" + int;
     }
-    intlen = int.length;
+    let intlen = int.length;
     if (isNaN(num)) {
         return "This is not an integer. Try again...";
     } else if (num < 0) {
@@ -80,16 +81,16 @@ const spellAnIntInItalian = int => {
         return "Limit exceeded!";
     }
     while ((section + 1) * 3 <= intlen) {
-        subnumberstring = int.substring(
+        let subnumberstring = int.substring(
             intlen - 1 - (section + 1) * 3 + 1,
             intlen - 1 - (section + 1) * 3 + 4
         );
         if (subnumberstring != "000") {
-            subnumber = parseInt(subnumberstring);
+            let subnumber = parseInt(subnumberstring);
             digit[0] = subnumberstring.substring(0, 1);
             digit[1] = subnumberstring.substring(1, 2);
             digit[2] = subnumberstring.substring(2, 3);
-            first2digits = parseInt(digit[1] * 10) + parseInt(digit[2]);
+            let first2digits = parseInt(digit[1] * 10) + parseInt(digit[2]);
             if (first2digits < 10) {
                 text[2] = mono[digit[2]];
                 text[1] = "";
